@@ -1,0 +1,158 @@
+.photo {
+  margin-bottom: 72px;
+}
+
+.photo__fluid {
+  img {
+    display: block;
+  }
+}
+
+.photo__border {
+  display: none;
+  height: 1px;
+  margin-bottom: 22px;
+  
+  background-color: #e5e5e5;
+  &--margin {
+    margin-bottom: 0;
+  }
+  &--address {
+    position: absolute;
+    top: -18px;
+    
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+.photo__row {
+  display: flex;
+  img {
+    display: block;
+  }
+}
+
+.photo__blockImg-list {
+  .reset();
+  
+  position: relative;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -90px;
+  padding-top: 21px;
+  padding-bottom: 21px;
+  padding-left: 21px;
+  padding-right: 38px;
+  
+  list-style: none;
+  
+  background-color: rgba(000, 000, 000, 0.3);
+}
+
+.photo__blockImg-itemHeadline {
+  .reset();
+  
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.photo__blockImg-itemText {
+  .reset();
+  
+  font-size: 14px;
+  line-height: 24px;
+  color: #ffffff;
+  &--like {
+    position: relative;
+    
+    padding-left: 38px;
+    
+    font-weight: 700;
+    
+    cursor: pointer;
+    &::before {
+      content: '';
+      
+      position: absolute;
+      top: -1px;
+      left: 0;
+      
+      .bg-svg(@like);
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .photo {
+    width: 84.375%;
+    margin: 0 auto 68px auto;
+  }
+  
+  .photo__row {
+    flex-wrap: wrap;
+  }
+  
+  .photo__blockImg {
+    &--tablet {
+      width: 50%;
+    }
+  }
+  
+  .photo__blockImg-list {
+    margin-top: 0;
+    padding-right: 30px;
+    
+    background-color: #f2f2f2;
+  }
+  
+  .photo__blockImg-itemHeadline {
+    color: #000000;
+  }
+  
+  .photo__blockImg-itemText {
+    color: #000000;
+    &--like {
+      &::before {
+        .bg-svg(@like-tablet);
+      }
+    }
+  }
+}
+
+@media (max-width: 740px) {
+  .photo {
+    width: auto;
+    margin-bottom: 39px;
+  }
+  
+  .photo__border {
+    display: block;
+  }
+  
+  .photo__blockImg {
+    width: 87.5%;
+    margin: 0 auto;
+  }
+  
+  .photo__blockImg-list {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 0;
+    
+    background-color: transparent;
+  }
+  
+  .photo__blockImg-itemText {
+    margin-bottom: 11px;
+  }
+  
+  .photo__row {
+    flex-direction: column;
+  }
+}

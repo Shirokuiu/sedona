@@ -1,0 +1,148 @@
+.video {
+  margin-bottom: 85px;
+}
+
+.video__contentWrap {
+  width: 66.66666666666667%;
+  margin: 0 auto;
+  img {
+    display: block;
+  }
+}
+
+.video__content-list {
+  .reset();
+  
+  position: relative;
+  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: -90px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  
+  list-style: none;
+  
+  background-color: rgba(000, 000, 000, 0.6);
+}
+
+.video__content-items {
+  &--bar {
+    width: 67.5%;
+  }
+  &--hidden {
+    display: none;
+  }
+}
+
+.video__content-item {
+  display: block;
+  &--replay {
+    cursor: pointer;
+    
+    .bg-svg(@replay);
+  }
+  &--bar {
+    position: relative;
+    
+    height: 3px;
+    
+    background-color: rgba(255, 255, 255, 0.3);
+    &::before {
+      content: '';
+      
+      position: absolute;
+      top: -3px;
+      left: 20.74074074074074%;
+      
+      width: 9px;
+      height: 9px;
+      
+      background-color: #ffffff;
+      
+      border-radius: 50%;
+      
+      cursor: pointer;
+    }
+  }
+  &--subtitles {
+    cursor: pointer;
+    
+    .bg-svg(@subtitles);
+  }
+  &--zoom {
+    cursor: pointer;
+    
+    .bg-svg(@zoom);
+  }
+}
+
+@media (max-width: 740px) {
+  .video {
+    margin-bottom: 219px;
+  }
+  
+  .video__contentWrap {
+    width: auto;
+  }
+  
+  .video__content-list {
+    position: relative;
+    top: 53px;
+    
+    flex-direction: column;
+    width: 87.5%;
+    height: 45px;
+    margin: -90px auto;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  
+  .video__content-items {
+    &--replay {
+      position: absolute;
+      left: 8.928571428571429%;
+      bottom: -34px;
+      z-index: 10;
+    }
+    &--bar {
+      width: 83.92857142857143%;
+    }
+    &--subtitles {
+      position: absolute;
+      right: 26.42857142857143%;
+      bottom: -34px;
+      z-index: 10;
+    }
+    &--zoom {
+      position: absolute;
+      right: 8.214285714285714%;
+      bottom: -34px;
+      z-index: 10;
+    }
+    &--hidden {
+      position: absolute;
+      bottom: -57px;
+      z-index: 5;
+      
+      width: 100%;
+      display: block;
+      height: 65px;
+      
+      background-color: #f2f2f2;
+    }
+  }
+  
+  .video__content-item {
+    &--replay {
+      .bg-svg(@replay-mobile);
+    }
+    &--subtitles {
+      .bg-svg(@subtitles-mobile);
+    }
+    &--zoom {
+      .bg-svg(@zoom-mobile);
+    }
+  }
+}
